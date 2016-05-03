@@ -1,0 +1,2 @@
+*/5 * * * * python ./denpa-gardening/temp_pres_humid_sensor.py >> ./denpa-gardening/sensor_data/sensor_data.csv
+*/5 * * * * python ./denpa-gardening/shutter.py
