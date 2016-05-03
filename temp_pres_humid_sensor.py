@@ -2,6 +2,7 @@
 
 import smbus
 import time
+import datetime
 
 bus_number  = 1
 i2c_address = 0x76
@@ -14,6 +15,7 @@ digH = []
 
 t_fine = 0.0
 
+sensor_data = {'temp':'0.0', 'pressure':'0.0','humidity':'0.0'}
 
 def writeReg(reg_address, data):
 	bus.write_byte_data(i2c_address,reg_address,data)
@@ -92,7 +94,8 @@ def compensate_P(adc_P):
 	v2 = ((pressure / 4.0) * digP[7]) / 8192.0
 	pressure = pressure + ((v1 + v2 + digP[6]) / 16.0)  
 
-	print "pressure : %7.2f hPa" % (pressure/100)
+	# print "pressure : %7.2f hPa" % (pressure/100)
+        sensor_data['pressure'] = pressure/100
 
 def compensate_T(adc_T):
 	global t_fine
@@ -100,7 +103,8 @@ def compensate_T(adc_T):
 	v2 = (adc_T / 131072.0 - digT[0] / 8192.0) * (adc_T / 131072.0 - digT[0] / 8192.0) * digT[2]
 	t_fine = v1 + v2
 	temperature = t_fine / 5120.0
-	print "temp : %-6.2f ℃" % (temperature) 
+	# print "temp : %-6.2f ℃" % (temperature)
+        sensor_data['temp'] = temperature
 
 def compensate_H(adc_H):
 	global t_fine
@@ -114,8 +118,8 @@ def compensate_H(adc_H):
 		var_h = 100.0
 	elif var_h < 0.0:
 		var_h = 0.0
-	print "hum : %6.2f ％" % (var_h)
-
+	# print "hum : %6.2f ％" % (var_h)
+        sensor_data['humidity'] = var_h
 
 def setup():
 	osrs_t = 1			#Temperature oversampling x 1
@@ -142,10 +146,13 @@ get_calib_param()
 if __name__ == '__main__':
 	try:
 		readData()
+                time_str = datetime.datetime.today().strftime("%Y/%m/%d %H:%M:%S")
+                temp_str = str(sensor_data['temp'])
+                humid_str = str(sensor_data['humidity'])
+                pressure_str = str(sensor_data['pressure'])
+
+		# print(sensor_data)
+                print(time_str+","+temp_str+","+humid_str+","+pressure_str)
 	except KeyboardInterrupt:
 		pass
-
-
-
-
 
