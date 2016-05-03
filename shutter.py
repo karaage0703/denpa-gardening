@@ -5,7 +5,7 @@ import os
 from time import sleep
 
 shutter_numb = 0
-photo_dir = os.path.expanduser('~/gardening_data/photo')
+photo_dir = os.path.expanduser('~/denpa-gardening/photo_data')
 
 def cameraLoad():
     global shutter_numb
