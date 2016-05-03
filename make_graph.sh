@@ -11,9 +11,7 @@ TITLE="sensor data"
 TIME_LABEL="time"
 TEMP_LABEL="temperature[C]"
 HUMID_LABEL="humidity[%]"
-# HUMID_LABEL="humidity"
 PRESSURE_LABEL="pressure[hPa]"
-
 
 gnuplot <<EOF
 set datafile separator ','
