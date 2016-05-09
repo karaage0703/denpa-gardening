@@ -17,8 +17,8 @@ gnuplot <<EOF
 set datafile separator ','
 set xdata time
 set timefmt '%Y/%m/%d %H:%M:%S'
-#set format x '%H:%M'
-set format x '%M:%S'
+set format x '%H:%M'
+#set format x '%M:%S'
 set mxtics 2
 set mytics 2
 set grid xtics ytics mxtics mytics
@@ -28,7 +28,7 @@ set y2tics
 set title '$TITLE'
 set term png size 800,480
 #set xrange ['2016/01/01 10:00:00':'2016/12/31 12:00:00']
-set yrange [-30:40]
+set yrange [-10:40]
 set y2range [0:100]
 set xlabel '$TIME_LABEL'
 set ylabel '$TEMP_LABEL'
@@ -40,7 +40,7 @@ set output
 unset y2tics
 unset y2label
 
-set yrange [-30:40]
+set yrange [-10:40]
 set xlabel '$TIME_LABEL'
 set ylabel '$TEMP_LABEL'
 set output '$OUT_TEMP'
