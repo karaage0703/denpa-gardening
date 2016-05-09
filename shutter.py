@@ -42,12 +42,6 @@ def shutter():
     photofile.close()
 
 if __name__ == '__main__':
-    cmd ="sudo killall mjpg_streamer"
-    subprocess.call(cmd, shell=True)
-
     cameraLoad()
     shutter()
     cameraSave()
-
-    cmd = "stream.sh"
-    subprocess.call(cmd, shell=True)
