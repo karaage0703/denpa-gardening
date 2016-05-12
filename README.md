@@ -10,28 +10,73 @@
 - BME280 Sensor module (AE-BME280 Akizuki denshi is recommended)
 - RPi Camera Module
 
+### Hardware Setup
+t.b.d.
+
+### Hardware Check
+t.b.d.
 
 
 ## Software
-
-### Install OS
+### Preparation
+#### Install OS
 - Install Raspbian Jessie (Release date:2016-03-18)
 - Enable Camera and I2C by using Raspi-config setup tool of Raspbian
 
-### Install I2C tools and I2C python library
+#### Install I2C tools and I2C python library
 ```sh
 $ sudo apt-get update
 $ sudo apt-get install i2c-tools
 $ sudo apt-get install python-smbus 
 ```
 
-### Install gnuplot
+#### Install gnuplot
 ```sh
 $ sudo apt-get update
 $ sudo apt-get install gnuplot
 ```
 
-### Setup denpa-gardening software
+
+### Setup
+
+#### Clone software
+
+```sh
+$ cd
+$ git clone https://github.com/karaage0703/denpa-gardening.git
+```
+
+#### Taking photo test
+Execute following command:
+```sh
+$ python ~/denpa-gardening/shutter.py
+```
+
+add photo file to `photo_data` directory.
+
+
+#### Getting sensor data test
+Execute following command:
+```sh
+$ python ~/denpa-gardening/temp_pres_humid_sensor.py
+```
+
+display sensor data. Data format is below
+
+`data`, `temperature`, `humidity`, `pressure`
+
+
+If you want to export sensor data to csv file, execute following command:
+```sh
+$ python ~/denpa-gardening/temp_pres_humid_sensor.py >> ~/denpa-gardening/sensor_data/sensor_data.csv
+```
+
+If you want to create graph of sensor data, execute following command:
+```sh
+$ ~/denpa-gardening/make_graph.sh ~/denpa-gardening/sensor_data/sensor_data.csv
+```
+
+#### Setup auto logging
 ```sh
 $ cd
 $ git clone https://github.com/karaage0703/denpa-gardening
