@@ -64,4 +64,4 @@ if __name__ == '__main__':
 
     date = get_date_of_image(param[1])
     output_img = put_date(param[1], date)
-    cv2.imwrite('exifdata_' + param[1], output_img)
+    cv2.imwrite(param[1], output_img)
