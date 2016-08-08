@@ -46,7 +46,7 @@ $ cd
 $ git clone https://github.com/karaage0703/denpa-gardening.git
 ```
 
-#### Taking photo test
+#### Taking photo
 Execute following command:
 ```sh
 $ python ~/denpa-gardening/shutter.py
@@ -55,7 +55,7 @@ $ python ~/denpa-gardening/shutter.py
 add photo file to `photo_data` directory.
 
 
-#### Getting sensor data test
+#### Getting sensor data
 Execute following command:
 ```sh
 $ python ~/denpa-gardening/temp_pres_humid_sensor.py
@@ -83,6 +83,13 @@ $ python ~/denpa-gardening/photo-exif-date-print.py 000001.jpg
 ```
 
 Timestamp is added to `000001.jpg` by using exif data of photo.
+
+#### Tweet test
+Edit `.twitter_config` according to your twitter KEY.
+
+```sh
+$ python ~/denpa-gardening/twitter-bot.py
+```
 
 #### Setup auto logging
 ```sh
