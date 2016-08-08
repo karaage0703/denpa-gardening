@@ -2,6 +2,7 @@
 import twython
 import ConfigParser
 import get_sensor_data as gsd
+from os import path
 
 if __name__ == '__main__':
     gsd.readData()
@@ -24,7 +25,8 @@ if __name__ == '__main__':
     # print(tweet_str)
     
     config_file = ConfigParser.SafeConfigParser()
-    config_file.read(".twitter_config")
+    config_file_path = path.dirname(path.abspath( __file__ )) + "/.twitter_config"
+    config_file.read(config_file_path)
     
     consumerKey = config_file.get("settings","consumerKey")
     consumerSecret = config_file.get("settings","consumerSecret")
