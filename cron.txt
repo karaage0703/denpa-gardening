@@ -1,3 +1,4 @@
-*/10 * * * * python ./denpa-gardening/temp-pres-humid-sensor.py >> ./denpa-gardening/sensor_data/sensor_data.csv
+*/10 * * * * python ./denpa-gardening/get_sensor_data.py >> ./denpa-gardening/sensor_data/sensor_data.csv
+*/10 * * * * python ./denpa-gardening/tweet_sensor_data.py
 */10 * * * * python ./denpa-gardening/shutter.py
 0   2 * * * ./denpa-gardening/data-dump.sh

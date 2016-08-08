@@ -3,3 +3,4 @@ sensor_data/*.png
 photo_data/*.jpg
 photo_data/*.set
 *.mp4
+*.pyc
