@@ -89,7 +89,7 @@ $ python ~/denpa-gardening/photo-exif-date-print.py 000001.jpg
 Timestamp is added to `000001.jpg` by using exif data of photo.
 
 #### Tweet sensor data
-Edit `.twitter_config` according to your twitter KEY.
+Edit `.twitter_config` according to your twitter KEY.  
 Then execute following command:
 ```sh
 $ python ~/denpa-gardening/tweet_sensor_data.py
