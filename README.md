@@ -36,6 +36,10 @@ $ sudo apt-get update
 $ sudo apt-get install gnuplot
 ```
 
+#### Install tweet library
+```sh
+$ sudo pip install twython
+```
 
 ### Usage
 
@@ -58,7 +62,7 @@ add photo file to `photo_data` directory.
 #### Getting sensor data
 Execute following command:
 ```sh
-$ python ~/denpa-gardening/temp_pres_humid_sensor.py
+$ python ~/denpa-gardening/get_sensor_data.py
 ```
 
 display sensor data. Data format is below
@@ -84,11 +88,11 @@ $ python ~/denpa-gardening/photo-exif-date-print.py 000001.jpg
 
 Timestamp is added to `000001.jpg` by using exif data of photo.
 
-#### Tweet test
+#### Tweet sensor data
 Edit `.twitter_config` according to your twitter KEY.
-
+Then execute following command:
 ```sh
-$ python ~/denpa-gardening/twitter-bot.py
+$ python ~/denpa-gardening/tweet_sensor_data.py
 ```
 
 #### Setup auto logging
@@ -98,10 +102,7 @@ $ git clone https://github.com/karaage0703/denpa-gardening
 $ crontab ~/denpa-gardening/cron.txt
 ```
 
-
 # Special Thanks
-
-
 
 # License
 This software is released under the MIT License, see LICENSE.
