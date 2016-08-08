@@ -97,8 +97,6 @@ $ python ~/denpa-gardening/tweet_sensor_data.py
 
 #### Setup auto logging
 ```sh
-$ cd
-$ git clone https://github.com/karaage0703/denpa-gardening
 $ crontab ~/denpa-gardening/cron.txt
 ```
 
