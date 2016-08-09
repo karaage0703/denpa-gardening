@@ -72,12 +72,12 @@ display sensor data. Data format is below
 
 If you want to export sensor data to csv file, execute following command:
 ```sh
-$ python ~/denpa-gardening/temp_pres_humid_sensor.py >> ~/denpa-gardening/sensor_data/sensor_data.csv
+$ python ~/denpa-gardening/get_sensor_data.py >> ~/denpa-gardening/sensor_data/sensor_data.csv
 ```
 
 If you want to create graph of sensor data, execute following command:
 ```sh
-$ ~/denpa-gardening/make_graph.sh ~/denpa-gardening/sensor_data/sensor_data.csv
+$ ~/denpa-gardening/make-graph.sh ~/denpa-gardening/sensor_data/sensor_data.csv
 ```
 
 #### Adding timestamp to photo
