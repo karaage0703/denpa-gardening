@@ -41,6 +41,11 @@ $ sudo apt-get install gnuplot
 $ sudo pip install twython
 ```
 
+#### Install video encoder
+```sh
+$ sudo apt-get install libav-tool
+```
+
 ### Usage
 
 #### Clone software
