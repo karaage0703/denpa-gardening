@@ -106,6 +106,7 @@ $ crontab ~/denpa-gardening/cron.txt
 ```
 
 # Special Thanks
+http://iwajyuku.hatenablog.com/entry/2016/12/15/181256 (send_mail.py)
 
 # License
 This software is released under the MIT License, see LICENSE.
