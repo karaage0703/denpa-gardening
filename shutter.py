@@ -5,7 +5,7 @@ import os
 from time import sleep
 
 shutter_numb = 0
-photo_dir = os.path.expanduser('~/photo_data')
+photo_dir = os.path.expanduser('~/denpa-gardening/photo_data')
 
 camera = picamera.PiCamera()
 
@@ -28,11 +28,15 @@ def loadFile():
     else:
         print("make photo directory")
         os.mkdir(photo_dir)
-        filename = os.path.join(photo_dir, 'camera.set')
-        with open(filename, mode='w') as fp:
-            fp.write('0')
 
     filename = os.path.join(photo_dir, 'camera.set')
+
+    if os.path.isfile(filename):
+        pass
+    else:
+        print("make camera set file")
+        with open(filename, mode='w') as fp:
+            fp.write('0')
 
     with open(filename) as fp:
         fp = open(filename)
@@ -48,7 +52,7 @@ def shutter():
 
     filename = os.path.join(photo_dir, 'camera.set')
 
-    shutter_numb +=1
+    shutter_numb += 1
 
     # write shutter number to setting file
     with open(filename, mode='w') as fp:
