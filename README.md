@@ -58,7 +58,7 @@ $ git clone https://github.com/karaage0703/denpa-gardening.git
 #### Taking photo
 Execute following command:
 ```sh
-$ python ~/denpa-gardening/shutter.py
+$ python3 ~/denpa-gardening/shutter.py
 ```
 
 add photo file to `photo_data` directory.
