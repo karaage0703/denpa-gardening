@@ -20,14 +20,14 @@ if [ $PRINT_DATE -eq 0 ] ; then
 	echo printing date
 	for f in *.jpg
 	do
-		python ../photo-exif-date-print.py $f
+		python3 ../photo-exif-date-print.py $f
 	done
 else
 	echo date is not printed
 fi
 
 # encoding video
-avconv -y -f image2 -r $FPS -i %6d.jpg -aspect $ASPECT -s $VIDEO_SIZE $OUTFILE
+ffmpeg -y -f image2 -r $FPS -i %6d.jpg -aspect $ASPECT -s $VIDEO_SIZE $OUTFILE
 
 # clean up work space
 rm *.jpg
